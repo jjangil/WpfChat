@@ -23,5 +23,18 @@ namespace WpfChat.View
         {
             InitializeComponent();
         }
+
+        private void TextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                var vm = DataContext as ViewModel.ChatViewModel;
+                if (vm != null && vm.SendMessageCommand.CanExecute(null))
+                {
+                    vm.SendMessageCommand.Execute(null);
+                }
+                e.Handled = true; // Enter 입력 후 줄바꿈 안 되게 막음
+            }
+        }
     }
 }
