@@ -7,11 +7,20 @@
         mc:Ignorable="d"
         Height="800" Width="500">
     <Grid>
-        <Grid>
-            <TextBlock Text="{Binding Title}" 
-                   HorizontalAlignment="Center"
-                   VerticalAlignment="Center"
-                   FontSize="20"/>
-        </Grid>
+        <ListBox ItemsSource="{Binding Friends}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <!-- Ellipse는 WPF에서 사용되는 도형 컨트롤-->
+                        <Ellipse Width="40" Height="40" Fill="LightGray" Margin="0,0,10,0"/>
+                        <!-- 이름 + 상태메시지 -->
+                        <StackPanel>
+                            <TextBlock Text="{Binding Name}" FontWeight="Bold" FontSize="14"/>
+                            <TextBlock Text="{Binding StatusMessage}" FontSize="12" Foreground="Gray"/>
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
     </Grid>
 </UserControl>
