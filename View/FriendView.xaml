@@ -5,12 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfChat.View"
         mc:Ignorable="d"
-        Height="450" Width="800">
+        Height="800" Width="500">
     <Grid>
         <Grid>
             <TextBlock Text="{Binding Title}" 
-                   VerticalAlignment="Center" 
-                   HorizontalAlignment="Center" 
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
                    FontSize="20"/>
         </Grid>
     </Grid>

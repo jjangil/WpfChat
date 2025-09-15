@@ -10,7 +10,7 @@ using WpfChat.Model;
 
 namespace WpfChat.ViewModel
 {
-    internal class ChatViewModel : BaseViewModel
+    public class ChatViewModel : BaseViewModel
     {
         private string _newMessage;
         public string NewMessage
