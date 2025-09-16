@@ -4,14 +4,29 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfChat.View"
+        xmlns:vm="clr-namespace:WpfChat.ViewModel"
         mc:Ignorable="d"
        Title="LoginWindow" Height="800" Width="500">
+    <Window.DataContext>
+        <vm:LoginViewModel/>
+    </Window.DataContext>
+    
     <Grid>
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="200">
             <TextBlock Text="WPF Chat" FontSize="24" HorizontalAlignment="Center" Margin="0,0,0,20"/>
-            <TextBox Text="아이디" Margin="0,0,0,10"/>
+            <!--<TextBox Text="아이디" Margin="0,0,0,10"/>
             <PasswordBox Margin="0,0,0,20"/>
-            <Button Content="로그인" Height="40" Click="LoginButton_Click"/>
+            <Button Content="로그인" Height="40" Click="LoginButton_Click"/>-->
+            <!-- 아이디 -->
+            <TextBox Text="{Binding InputId, UpdateSourceTrigger=PropertyChanged}" 
+                     Margin="0,0,0,10"/>
+
+            <!-- 비밀번호 -->
+            <PasswordBox x:Name="PasswordBox" Margin="0,0,0,20"
+                         PasswordChanged="PasswordBox_PasswordChanged"/>
+
+            <!-- 로그인 버튼 -->
+            <Button Content="로그인" Height="40" Command="{Binding LoginCommand}"/>
         </StackPanel>
     </Grid>
 </Window>

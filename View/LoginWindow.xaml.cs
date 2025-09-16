@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfChat.ViewModel;
 
 namespace WpfChat.View
 {
@@ -24,11 +25,12 @@ namespace WpfChat.View
             InitializeComponent();
         }
 
-        private void LoginButton_Click(object sender, RoutedEventArgs e)
+        private void PasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
-            this.Close();
+            if (DataContext is LoginViewModel vm)
+            {
+                vm.InputPassword = PasswordBox.Password;
+            }
         }
     }
 }

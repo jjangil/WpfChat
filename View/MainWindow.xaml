@@ -23,6 +23,7 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             
+            <!-- Command를 사용하는 이유는 UI와 비즈니스 로직 분리하기 위함-->
             <Button Grid.Column="0" Content="친구" Command="{Binding ShowFriendViewCommand}"/>
             <Button Grid.Column="1" Content="대화" Command="{Binding ShowChatViewCommand}"/>
             <Button Grid.Column="2" Content="오픈채팅"/>

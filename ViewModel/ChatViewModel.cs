@@ -41,5 +41,6 @@ namespace WpfChat.ViewModel
                 OnPropertyChanged(nameof(NewMessage));
             }
         }
+
     }
 }
