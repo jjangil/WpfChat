@@ -13,6 +13,11 @@
         </Grid.RowDefinitions>
 
         <ListBox ItemsSource="{Binding Messages}" Grid.Row="0">
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="ListBoxItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Right"/>
+                </Style>
+            </ListBox.ItemContainerStyle>
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <TextBlock Text="{Binding Text}"
@@ -25,7 +30,7 @@
         </ListBox>
 
         <StackPanel Orientation="Horizontal" Grid.Row="1" >
-            <TextBox Text="{Binding NewMessage, UpdateSourceTrigger=PropertyChanged}" Width="443"  TextWrapping="Wrap" KeyDown="TextBox_KeyDown"/>
+            <TextBox Text="{Binding NewMessage, UpdateSourceTrigger=PropertyChanged}" Width="443" Height="35" TextWrapping="Wrap" KeyDown="TextBox_KeyDown"/>
             <Button Content="보내기" Command="{Binding SendMessageCommand}"/>
         </StackPanel>
     </Grid>
